@@ -38,7 +38,7 @@ namespace DbOperationWithEfCoreApp.Controllers
         [HttpGet("all")]
         public async Task<IActionResult> GetmultipleCurrenciesAsync()
         {
-            var ids=new List<int> {1,3,5 };
+            var ids=new List<int> {1,3,5,6 };
             var result = await this.appDbContext.Currencies.Where(x => ids.Contains(x.Id)).ToListAsync();
             return Ok(result);
         }
