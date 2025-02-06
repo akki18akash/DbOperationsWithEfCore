@@ -1,4 +1,7 @@
 
+using DbOperationWithEfCoreApp.Data;
+using Microsoft.EntityFrameworkCore;
+
 namespace DbOperationWithEfCoreApp
 {
     public class Program
@@ -6,7 +9,10 @@ namespace DbOperationWithEfCoreApp
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
-
+            builder.Services.AddDbContext<AppDbContext>(options =>
+            {
+                options.UseSqlServer(builder.Configuration.GetConnectionString("AppDb"));
+            });
             // Add services to the container.
 
             builder.Services.AddControllers();
