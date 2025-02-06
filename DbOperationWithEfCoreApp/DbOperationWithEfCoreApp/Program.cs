@@ -19,7 +19,7 @@ namespace DbOperationWithEfCoreApp
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
-
+            // Committed by Sunil
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
